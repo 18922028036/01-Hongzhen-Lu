@@ -12,13 +12,11 @@
     <style>
         /* --- 1. 核心变量定义 --- */
         :root {
-            /* 色彩体系：Oxygen & Ink + Airy Blue */
             --bg-color: #FFFFFF;        
             --text-main: #1B2A38;       /* 普鲁士深蓝 */
             --text-light: #5A6D7C;      /* 浅灰蓝 */
-            --brand-color: #94B4D1;     /* 空气蓝 (Pantone 14-4122 TCX) */
+            --brand-color: #94B4D1;     /* 空气蓝 */
             
-            /* 布局 */
             --container-width: 1100px;
             --spacing-unit: 24px;
         }
@@ -51,8 +49,6 @@
         }
 
         .section-padding { padding: 100px 0; }
-
-        /* 高亮样式 */
         .highlight {
             color: #5d8cb9;
             font-weight: 600;
@@ -69,17 +65,17 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            padding: 40px 0; /* 防止小屏幕内容贴边 */
+            padding: 40px 0; 
         }
 
         .hero-layout {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr; /* 左侧文字稍宽，右侧照片 */
+            grid-template-columns: 1.2fr 0.8fr; 
             gap: 80px;
             width: 100%;
             max-width: var(--container-width);
             padding: 0 var(--spacing-unit);
-            align-items: center; /* 垂直居中 */
+            align-items: center; 
         }
 
         .hero-content {
@@ -89,7 +85,6 @@
             z-index: 2;
         }
 
-        /* 个人照片容器 */
         .hero-image-container {
             position: relative;
             width: 100%;
@@ -98,21 +93,17 @@
             align-items: center;
         }
 
-        /* 个人照片样式 */
         .hero-portrait {
             width: 100%;
-            max-width: 400px; /* 限制最大宽度，防止太大 */
+            max-width: 400px; 
             height: auto;
-            border-radius: 12px; /* 现代圆角 */
-            /* 制造一种照片悬浮的阴影效果，使用品牌色 */
+            border-radius: 12px; 
             box-shadow: 20px 20px 0px rgba(148, 180, 209, 0.3); 
             object-fit: cover;
             transition: transform 0.5s ease;
         }
         
-        .hero-portrait:hover {
-            transform: translateY(-5px);
-        }
+        .hero-portrait:hover { transform: translateY(-5px); }
 
         .hero-contact {
             margin-bottom: 24px;
@@ -167,6 +158,8 @@
             border-radius: 2px;
             cursor: pointer;
             transition: all 0.3s ease;
+            display: inline-block; /* 确保a标签表现如按钮 */
+            text-align: center;
         }
 
         .btn-primary {
@@ -204,7 +197,6 @@
         }
 
         .bio-text { font-size: 16px; color: var(--text-main); text-align: justify; margin-bottom: 30px; }
-        
         .education-item { margin-bottom: 16px; border-left: 2px solid #eee; padding-left: 16px; }
         .edu-school { font-weight: 700; font-size: 18px; }
         .edu-degree { color: var(--text-light); }
@@ -259,21 +251,20 @@
             position: absolute; left: 0; font-weight: bold;
         }
 
-        /* --- 6. Creator Project (Updated) --- */
+        /* --- 6. Creator Project --- */
         .project-container { background-color: #FAFAFA; }
         .project-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            align-items: center; /* 垂直居中 */
+            align-items: center; 
         }
 
-        /* 小红书截图样式 */
         .project-visual {
             width: 100%;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); /* 柔和的阴影让截图立体 */
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); 
             background-color: #fff;
             border: 1px solid #eee;
         }
@@ -284,9 +275,7 @@
             display: block;
             transition: transform 0.3s ease;
         }
-        .project-img:hover {
-            transform: scale(1.02); /* 悬停微放大 */
-        }
+        .project-img:hover { transform: scale(1.02); }
 
         .dashboard-row {
             display: flex;
@@ -332,7 +321,7 @@
             .btn-group { justify-content: center; }
             
             .hero-image-container { order: 1; }
-            .hero-portrait { max-width: 250px; } /* 手机端头像缩小 */
+            .hero-portrait { max-width: 250px; } 
             
             .about-grid, .project-layout { grid-template-columns: 1fr; }
             .workflow-steps { grid-template-columns: 1fr 1fr; }
@@ -364,8 +353,8 @@
                 </div>
 
                 <div class="btn-group">
-                    <button class="btn btn-primary">下载简历 (PDF)</button>
-                    <button class="btn btn-secondary">查看精选作品</button>
+                    <a href="resume.pdf" class="btn btn-primary" download="卢泓臻-个人简历.pdf">下载简历 (PDF)</a>
+                    <a href="#project" class="btn btn-secondary">查看精选作品</a>
                 </div>
             </div>
             
@@ -472,7 +461,7 @@
         </div>
     </section>
 
-    <section class="section-padding project-container">
+    <section id="project" class="section-padding project-container">
         <div class="container">
             <h2 class="section-title">个人项目 The Creator Project</h2>
             
